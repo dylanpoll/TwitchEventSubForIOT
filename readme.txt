@@ -16,3 +16,8 @@ replace type with the subscription type, example is channel.update, and the broa
 you can also send a self made webhook post to twitch directly using this link: https://api.twitch.tv/helix/eventsub/subscriptions
 
 you will need to satisfy oauth2.0, you can use a service like 0auth and after you get the app approved on the twitch dev portal you can stop using it unless you need cheer or guarded event reactions. That will come soon. A streamlabs release will as well. also considering making a enroll portal that takes a broadcast ID and shoots out a get request for all sub types.
+
+TODO:
+add subtype.env and fill it with all the sub types prefixed by incrimenting numbers. Add a route that will use /webhooksingleton/:CustomSetPassword/:broadcasterId and process a request to the(also add /:CustomSetPassword/ to this) /createWebhook/:type/:broadcasterId route attempting to applying all the subtypes in the subtype.env for that broadcasterId and log all the success/failures.
+
+complete full oauth2.0 to enable cheer and other features other then the open sub calls.
